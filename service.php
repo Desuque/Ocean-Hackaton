@@ -1,4 +1,9 @@
 <?php
+
+//This is my personal key, you can change it :) (see n2yo.com)
+define("apiKey", "RFQQ3R-42XRJ9-77N7GV-3W8N");
+define("apiURL", "https://www.n2yo.com/rest/v1/satellite/tle/25543&apiKey=");
+
 $mysqli = new mysqli('localhost', 'root', '', 'ocean');
 $mysqli->set_charset("utf8");
 

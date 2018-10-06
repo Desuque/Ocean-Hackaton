@@ -111,7 +111,6 @@
     
     $.get('/satellites.json?fakeparameter=to_avoid_browser_cache2', function(resp) {
       var startTime = new Date().getTime();
-      
      
       console.log('sat.js downloaded data');
       $('#loader-text').text('Crunching numbers...');
