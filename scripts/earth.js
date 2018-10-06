@@ -75,7 +75,6 @@
       onImageLoaded();
     };
     img.src = '/mercator-tex.jpg';
-  //  img.src = '/mercator-tex-512.jpg';
     
   patchTexture = gl.createTexture();
     var patchImg = new Image();
@@ -90,7 +89,6 @@
       onImageLoaded();
     };
     patchImg.src = '/patch.png';
-  //  img.src = '/mercator-tex-512.jpg';
   
     nightTexture = gl.createTexture();
     var nightImg = new Image();
@@ -105,7 +103,6 @@
       onImageLoaded();
     };
     nightImg.src = '/nightearth-4096.png';
-   // nightImg.src = '/nightearth-512.jpg';
     
     //generate a uvsphere bottom up, CCW order
     var vertPos = [];
