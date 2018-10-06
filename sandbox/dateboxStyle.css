@@ -1,0 +1,37 @@
+#block{
+ border-top-left-radius : 40px 40px;
+ border-bottom-left-radius : 40px 40px;
+ background-color: black;
+ border: 3px solid #F3F4FB;
+ width: 280px;
+ height: 300px;
+ position: absolute;
+ left: 1230px;
+ top: 20px;
+}
+
+#myButton{
+ background-color: white;
+ border: 0;
+ margin: 5px;
+ top: 7px; 
+ height: 20px;
+ position: absolute;
+ left: 215px ;
+ top: 15px ;
+}
+
+#myDate{
+ margin-left: 10px;	
+ position: absolute;
+ left: 5px ;
+ top: 20px ;	
+}
+
+#myTime{
+ top: 40px; 
+ position: absolute;
+ left: 140px ;
+ top: 20px ;
+}
+
