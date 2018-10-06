@@ -9,7 +9,7 @@ varying vec3 normal;
 
 uniform sampler2D uSampler;
 uniform sampler2D uNightSampler;
-
+uniform sampler2D uPatchSampler;
 
 
 void main(void) {
@@ -20,5 +20,7 @@ void main(void) {
   
   vec3 nightLightColor = texture2D(uNightSampler, texCoord).rgb * pow(1.0 - directionalLightAmount, 2.0) ;
 
-  gl_FragColor = vec4(litTexColor + nightLightColor, 1.0);
+  vec3 patchColor = texture2D(uPatchSampler, texCoord).rgb;
+
+  gl_FragColor = vec4(litTexColor + nightLightColor + patchColor, 1.0);
 }
