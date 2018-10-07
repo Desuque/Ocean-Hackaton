@@ -68,21 +68,15 @@ include 'satellites.php';
       <div id="menu-about" class="menu-item">
         <div class="menu-title">About</div>
         <div id="about-box" class="menubox submenu">
-          <span class="box-header">Stuff in Space</span>
-          <p>Stuff in Space is a realtime 3D map of objects in Earth orbit, visualized using WebGL.</p>
+          <span class="box-header">SatWatch</span>
+          <p>SatWatch is a realtime 3D map of satellites in Earth orbit, visualized using WebGL.</p>
           
-          <p>The website updates daily with orbit data from <a href="http://www.space-track.org">Space-Track.org</a> 
+          <p>Supported by the amazing website <a href="https://github.com/jeyoder/ThingsInSpace"> ThingsInSpace</a> by James Yoder.
+          Make with love for the Ocean Hackaton 2018.
+
+          The website updates daily with orbit data from <a href="n2yo.com">N2YO.com</a> 
           and uses the excellent <a href="https://github.com/shashwatak/satellite-js">satellite.js</a> Javascript library
           to calculate satellite positions.</p>
-          
-          <span class="box-header">About the author</span>
-          <p>My name is James Yoder; I'm an alumnus of <a href="http://www.usfirst.org/roboticsprograms/frc"><i>FIRST</i> Robotics
-          Competition </a> (FRC) <a href="http://team624.org">Team 624</a> and an incoming Electrical and Computer Engineering freshman at the 
-          University of Texas at Austin. </p>
-          <p>Contact: <a href="mailto:info@stuffin.space">info@stuffin.space</a></p>
-          <p>See Stuff in Space on <a href="https://github.com/jeyoder/ThingsInSpace"> GitHub </a></p>
-
-        
         </div>
       </div>
     </div>
