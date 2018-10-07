@@ -99,13 +99,39 @@ include 'satellites.php';
     <div id="sat-hoverbox">(none)</div>
     <div id="sat-infobox">
       <div id="sat-info-title">This is a title</div>
-
-      <div class="sat-info-row">
-        <div id="locateSatBlock">
+      <div id="all-objects-link" class="link">Find all objects from this launch...</div>
+        <div class="sat-info-row">
+          <div class="sat-info-key">Int'l Designator</div>
+          <div class="sat-info-value" id="sat-intl-des">1998-067A</div>
+        </div>
+        <div class="sat-info-row">
+          <div class="sat-info-key">Type</div>
+          <div class="sat-info-value" id="sat-type">PAYLOAD</div>
+        </div>
+        <div class="sat-info-row">
+          <div class="sat-info-key">Apogee</div>
+          <div class="sat-info-value" id="sat-apogee">100 km</div>
+        </div>
+        <div class="sat-info-row">
+          <div class="sat-info-key">Perigee</div>
+          <div class="sat-info-value" id="sat-perigee">100 km</div>
+        </div>
+        <div class="sat-info-row">
+          <div class="sat-info-key">Inclination</div>
+          <div class="sat-info-value" id="sat-inclination">123.45°</div>
+        </div>
+        <div class="sat-info-row">
+          <div class="sat-info-key">Altitude</div>
+          <div class="sat-info-value" id="sat-altitude">100  km</div>
+        </div>
+        <div class="sat-info-row">
+          <div class="sat-info-key">Velocity</div>
+          <div class="sat-info-value" id="sat-velocity">100  km/s</div>
+        </div>
+        <div class="sat-info-row" id="locateSatBlock">
           <input type="date" id="myDate">
           <input type="time" id="myTime">
           <button id= "locateSatButton" type="button">locate</button>
-          <p id="reponse" background-color="grey"></p>  <!-- exemple d'utillisation-->
         </div>
       </div>
     </div>
