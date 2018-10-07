@@ -9,11 +9,13 @@ include 'satellites.php';
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Droid+Sans" type="text/css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" href="/icomoon.css" type="text/css">
     <link rel="stylesheet" href="/perfect-scrollbar.min.css" type="text/css">
     <link rel="stylesheet" href="/style.css" type="text/css">
-    
+
     <script src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
     <script src="/scripts/satellite.min.js"></script>
     <script src="/script-loader.php"></script>
     
@@ -44,14 +46,6 @@ include 'satellites.php';
           <li data-group="SpaceXGroup">SpaceX</li>
         </ul>
       </div>
-     <!-- <div id="menu-color-schemes" class="menu-item">
-        <div class="menu-title">Color Schemes</div>
-        <ul id="color-schemes-submenu" class="submenu">
-          <li data-color="default">Type</li>
-          <li data-color="velocity">Velocity</li>
-          <li data-color="apogee">Apogee</li>
-        </ul>
-      </div>-->
     </div>
     <div id="menu-right" class="menubar">
       <div id="menu-help" class="menu-item">
@@ -100,8 +94,6 @@ include 'satellites.php';
           University of Texas at Austin. </p>
           <p>Contact: <a href="mailto:info@stuffin.space">info@stuffin.space</a></p>
           <p>See Stuff in Space on <a href="https://github.com/jeyoder/ThingsInSpace"> GitHub </a></p>
-
-        
         </div>
       </div>
     </div>
@@ -109,40 +101,17 @@ include 'satellites.php';
     <div id="sat-hoverbox">(none)</div>
     <div id="sat-infobox">
       <div id="sat-info-title">This is a title</div>
-      <div id="all-objects-link" class="link">Find all objects from this launch...</div>
+
       <div class="sat-info-row">
-        <div class="sat-info-key">Int'l Designator</div>
-        <div class="sat-info-value" id="sat-intl-des">1998-067A</div>
-      </div>
-      <div class="sat-info-row">
-        <div class="sat-info-key">Type</div>
-        <div class="sat-info-value" id="sat-type">PAYLOAD</div>
-      </div>
-      <div class="sat-info-row">
-        <div class="sat-info-key">Apogee</div>
-        <div class="sat-info-value" id="sat-apogee">100 km</div>
-      </div>
-      <div class="sat-info-row">
-        <div class="sat-info-key">Perigee</div>
-        <div class="sat-info-value" id="sat-perigee">100 km</div>
-      </div>
-       <div class="sat-info-row">
-        <div class="sat-info-key">Inclination</div>
-        <div class="sat-info-value" id="sat-inclination">123.45°</div>
-      </div>
-      <div class="sat-info-row">
-        <div class="sat-info-key">Altitude</div>
-        <div class="sat-info-value" id="sat-altitude">100  km</div>
-      </div>
-      <div class="sat-info-row">
-        <div class="sat-info-key">Velocity</div>
-        <div class="sat-info-value" id="sat-velocity">100  km/s</div>
-      </div>
-      <div class="sat-info-row">
-        <div class="sat-info-key">Period</div>
-        <div class="sat-info-value" id="sat-period">100  min</div>
+        <div id="locateSatBlock">
+          <input type="date" id="myDate">
+          <input type="time" id="myTime">
+          <button id= "locateSatButton" type="button">locate</button>
+          <p id="reponse" background-color="grey"></p>  <!-- exemple d'utillisation-->
+        </div>
       </div>
     </div>
+
     <div id="zoom-controls">
       <div id="zoom-in" class="zoom-button">+</div>
       <div id="zoom-out" class="zoom-button">-</div>
@@ -156,6 +125,14 @@ include 'satellites.php';
       </div>
     </div>
   </div>
+  <script>
+    $('#locateSatButton').click(function(){
+      var date = $('#myDate').val();
+      var time = $('#myTime').val();
+      if (time != "" && date != "") {
+        var epoch = new Date(date+" "+time);
+      }
+    })
+  </script>
   </body>
 </html>
-

@@ -5,27 +5,22 @@
 	
 
   <div align="right" id="block"> 
-
-	<input type="date" id="myDate">
-	<input type="time" id="myTime">
-	<button id= "myButton" type="button" onclick="FunctionDT()">locate</button>
-    <p id="reponse" background-color="grey"></p>  <!-- exemple d'utillisation-->
-
-   </div>
+    <input type="date" id="myDate">
+    <input type="time" id="myTime">
+    <button id= "myButton" type="button" onclick="FunctionDT()">locate</button>
+    <p id="reponse" background-color="grey"></p>
+  </div>
 
 
-  <script>
-   function FunctionDT() {
+<script>
+  function FunctionDT() {
     var imputDate = document.getElementById("myDate");
     var inputTime = document.getElementById("myTime");
     var varDate = imputDate.value;   	
     var varTime = inputTime.value;
-    
-   
-       document.getElementById("reponse").innerHTML = "The Date is: " + varDate+ "and the Time is: "+ varTime;
-    
-}
-  </script>
+    document.getElementById("reponse").innerHTML = "The Date is: " + varDate+ "and the Time is: "+ varTime;
+  }
+</script>
  </body>
 </html>
 
