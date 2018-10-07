@@ -63,14 +63,16 @@ include 'satellites.php';
         <div class="menu-title">About</div>
         <div id="about-box" class="menubox submenu">
           <span class="box-header">SatWatch</span>
-          <p>SatWatch is a realtime 3D map of satellites in Earth orbit, visualized using WebGL.</p>
-          
-          <p>Supported by the amazing website <a href="https://github.com/jeyoder/ThingsInSpace"> ThingsInSpace</a> by James Yoder.
-          Made with love for the Ocean Hackaton 2018.
+            <p>SatWatch is a realtime 3D map of satellites in Earth orbit, visualized using WebGL.</p>
 
-          The website updates daily with orbit data from <a href="n2yo.com">N2YO.com</a> 
-          and uses the excellent <a href="https://github.com/shashwatak/satellite-js">satellite.js</a> Javascript library
-          to calculate satellite positions.</p>
+            <p> Made with love for the Ocean Hackaton 2018.
+
+            The website updates every second with orbit data from <a href="n2yo.com">N2YO.com</a>
+            to calculate satellite positions.</p>
+            
+            Feel free to ask when a satellite will provide you pieces of informations about your city.
+            You can also choose to go back in the past to know when the latest datas about your town got collected.
+            Trajectories for any time in the future are calculated.
         </div>
       </div>
     </div>
