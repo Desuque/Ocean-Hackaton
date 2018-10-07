@@ -33,19 +33,6 @@ include 'satellites.php';
         <span class="icon-search"></span>
         <input type="text" id="search"></input>
       </div>
-      <div id="menu-groups" class="menu-item">
-        <div class="menu-title">Groups</div>
-        <ul id="groups-display" class="dropdown submenu">
-          <li data-group="<clear>" class="clear-option">Clear</li>
-          <li data-group="GPSGroup">GPS</li>
-          <li data-group="IridiumGroup">Iridium</li>
-          <li data-group="GlonassGroup">GLONASS</li>
-          <li data-group="GalileoGroup">Galileo</li>
-          <li data-group="Iridium33DebrisGroup">Iridium 33 Collision Debris</li>
-          <li data-group="WestfordNeedlesGroup">Westford Needles</li>
-          <li data-group="SpaceXGroup">SpaceX</li>
-        </ul>
-      </div>
     </div>
     <div id="menu-right" class="menubar">
       <div id="menu-help" class="menu-item">
@@ -60,14 +47,6 @@ include 'satellites.php';
                <img class="dot" src="/dot-red.png"></img>
                Satellite
              </li>
-            <li>
-              <img class="dot" src="/dot-blue.png"></img>
-              Rocket body
-            </li>
-            <li>
-              <img class="dot" src="/dot-grey.png"></img>
-              Debris
-            </li>
           </ul>
           <ul id="controls-info">
             <li>
@@ -87,7 +66,7 @@ include 'satellites.php';
           <p>SatWatch is a realtime 3D map of satellites in Earth orbit, visualized using WebGL.</p>
           
           <p>Supported by the amazing website <a href="https://github.com/jeyoder/ThingsInSpace"> ThingsInSpace</a> by James Yoder.
-          Make with love for the Ocean Hackaton 2018.
+          Made with love for the Ocean Hackaton 2018.
 
           The website updates daily with orbit data from <a href="n2yo.com">N2YO.com</a> 
           and uses the excellent <a href="https://github.com/shashwatak/satellite-js">satellite.js</a> Javascript library
@@ -99,7 +78,6 @@ include 'satellites.php';
     <div id="sat-hoverbox">(none)</div>
     <div id="sat-infobox">
       <div id="sat-info-title">This is a title</div>
-      <div id="all-objects-link" class="link">Find all objects from this launch...</div>
         <div class="sat-info-row">
           <div class="sat-info-key">Int'l Designator</div>
           <div class="sat-info-value" id="sat-intl-des">1998-067A</div>
