@@ -11,42 +11,40 @@ $satellites = $mysqli->query("SELECT * FROM satellite");
 while($f = $satellites->fetch_object()){
     $link = $apiurl.$f->idSat.$apikey;
     $json = file_get_contents($link);
-	//echo $json.'<br/>';
 
 	$decod = json_decode($json);
-	$divide = explode(" ", $decod->{'tle'});
+	$divide = preg_split('/[\s]+/', $decod->{'tle'});
 
-	echo $decod->{'tle'}.'<br/>'.'<br/>'; // 12345
-	echo $divide[1].'<br/>';
+	$isSecond = false;
+	$tle1 = array();
+	$tle2 = array();
+	for ( $i = 0 ; $i < count($divide) ; $i++ ) {
+		if($divide[$i] == "2"){
+			$isSecond = true;
+		}
 
-	$pieces = array_chunk($decod, ceil(count($array) / 2));
-	echo $pieces;
+		if(!$isSecond) {
+			$tle1[] = $divide[$i];
+		}
+		else {
+			$tle2[] = $divide[$i];
+		}
+	}
 
+	$arrtle1 = implode(" ", $tle1);
+	$arrtle2 = implode(" ", $tle2);
+	$date = date('Y-m-d H:i:s');
 
-	//$sql = "INSERT INTO tle(idSatellite, INTLDES, TLE_LINE1, TLE_LINE2)
-	//			VALUES (".$f->id.",".$divide[1].", 'john@example.com')";
+	//Add the satellite info
+	$sql = "INSERT INTO tle(`idSatellite`, `INTLDES`, `TLE_LINE1`, `TLE_LINE2`, `date`)
+		VALUES ('$f->id','$tle1[1]','$arrtle1','$arrtle2', '$date')";
 
-
-//if ($conn->query($sql) === TRUE) {
-//    echo "New record created successfully";
-//} else {
-//    echo "Error: " . $sql . "<br>" . $conn->error;
-//}
-
-//$conn->close();
+	if ($mysqli->query($sql) === TRUE) {
+    	echo 'New record created successfully, satellite: '.$f->id.'<br/>';
+	} else {
+    	echo "Error: " . $sql . "<br/>" . $mysqli->error . '<br/>';
+	}
 }
 
-$satellites = $mysqli->query("SELECT * FROM satellite");
-
-$tles = $mysqli->query("SELECT * FROM tle WHERE idSatellite in (SELECT id FROM satellite)");
-
-$sats = array();
-while($f = $tles->fetch_object()){
-    $sats[] = array("INTLDES"=>$f->INTLDES, "OBJECT_NAME"=>"SPACE STATION", "OBJECT_TYPE"=>"SATELLITE", "TLE_LINE1"=>$f->TLE_LINE1, "TLE_LINE2"=>$f->TLE_LINE2);
-
-}
-
-$json_string = json_encode($sats);
-$file = 'satellites.json';
-file_put_contents($file, $json_string);
+$mysqli->close();
 ?>
