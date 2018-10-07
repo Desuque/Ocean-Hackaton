@@ -128,11 +128,7 @@ include 'satellites.php';
           <div class="sat-info-key">Velocity</div>
           <div class="sat-info-value" id="sat-velocity">100  km/s</div>
         </div>
-        <div class="sat-info-row" id="locateSatBlock">
-          <input type="date" id="myDate">
-          <input type="time" id="myTime">
-          <button id= "locateSatButton" type="button">locate</button>
-        </div>
+  
       </div>
     </div>
 
