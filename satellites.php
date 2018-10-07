@@ -1,5 +1,6 @@
 <?php
-$tles = $mysqli->query("SELECT * FROM tle t INNER JOIN satellite s ON t.idSatellite = s.id");
+$tles = $mysqli->query("SELECT * FROM tle t INNER JOIN satellite s 
+	ON t.idSatellite = s.id AND t.date in (SELECT MAX(date) from tle GROUP BY idSatellite)");
 
 $sats = array();
 while($f = $tles->fetch_object()){

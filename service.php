@@ -33,10 +33,11 @@ while($f = $satellites->fetch_object()){
 
 	$arrtle1 = implode(" ", $tle1);
 	$arrtle2 = implode(" ", $tle2);
+	$date = date('Y-m-d H:i:s');
 
 	//Add the satellite info
-	$sql = "INSERT INTO tle(idSatellite, INTLDES, TLE_LINE1, TLE_LINE2)
-		VALUES ('$f->id','$tle1[1]','$arrtle1','$arrtle2')";
+	$sql = "INSERT INTO tle(`idSatellite`, `INTLDES`, `TLE_LINE1`, `TLE_LINE2`, `date`)
+		VALUES ('$f->id','$tle1[1]','$arrtle1','$arrtle2', '$date')";
 
 	if ($mysqli->query($sql) === TRUE) {
     	echo 'New record created successfully, satellite: '.$f->id.'<br/>';
