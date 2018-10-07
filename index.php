@@ -17,12 +17,12 @@ include 'satellites.php';
     <script src="/scripts/satellite.min.js"></script>
     <script src="/script-loader.php"></script>
     
-    <title>SatWatch</title>
+    <title>SatWatch | OceanHackaton</title>
     
   </head>
   <body>
   <div id="no-webgl">
-    Stuff in Space requires <a href="http://caniuse.com/#feat=webgl">WebGL</a> and <a href="http://caniuse.com/#feat=webworkers">Web Worker</a> support. 
+    You need <a href="http://caniuse.com/#feat=webgl">WebGL</a> and <a href="http://caniuse.com/#feat=webworkers">Web Worker</a> support for visit this site. 
   </div>
   <div id="canvas-holder">
     <canvas id="canvas"></canvas>
@@ -31,29 +31,11 @@ include 'satellites.php';
         <span class="icon-search"></span>
         <input type="text" id="search"></input>
       </div>
-      <div id="menu-groups" class="menu-item">
-        <div class="menu-title">Groups</div>
-        <ul id="groups-display" class="dropdown submenu">
-          <li data-group="<clear>" class="clear-option">Clear</li>
-          <li data-group="GPSGroup">GPS</li>
-          <li data-group="IridiumGroup">Iridium</li>
-          <li data-group="GlonassGroup">GLONASS</li>
-          <li data-group="GalileoGroup">Galileo</li>
-          <li data-group="Iridium33DebrisGroup">Iridium 33 Collision Debris</li>
-          <li data-group="WestfordNeedlesGroup">Westford Needles</li>
-          <li data-group="SpaceXGroup">SpaceX</li>
-        </ul>
-      </div>
-     <!-- <div id="menu-color-schemes" class="menu-item">
-        <div class="menu-title">Color Schemes</div>
-        <ul id="color-schemes-submenu" class="submenu">
-          <li data-color="default">Type</li>
-          <li data-color="velocity">Velocity</li>
-          <li data-color="apogee">Apogee</li>
-        </ul>
-      </div>-->
     </div>
     <div id="menu-right" class="menubar">
+      <div id="menu-help" class="menu-item">
+        <div class="menu-title"><a href="/addSat.php">Add Satellite</a></div>
+      </div>
       <div id="menu-help" class="menu-item">
         <div class="menu-title">Help</div>
         <div id="help-box" class="menubox submenu">
@@ -81,7 +63,6 @@ include 'satellites.php';
               Left click to select an object
             </li>
           </ul>
-        
         </div>
       </div>
       <div id="menu-about" class="menu-item">
